@@ -5,7 +5,7 @@
 - Conexão com o banco de dados MongoDB, com verificação se o usuário existe, informações corretas etc.
 - Armazenamento de token em localStorage para autenticação e para o usuário ficar logado
 - Uso de Bibliotecas de UI para facilitar a criação da interface principal de registro e login.
-- 
+
 
 
 # 🪓Ferramentas Utilizadas
