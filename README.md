@@ -21,11 +21,13 @@
 - TailwindCss
 - Material UI
 
-/Register
+# /Register
 ![image](https://user-images.githubusercontent.com/125046205/231169610-92d87cac-d28f-4e1a-8ce6-0f4a473a234c.png)
-/Login
+
+# /Login
 ![image](https://user-images.githubusercontent.com/125046205/231169738-e9676c8c-3d08-4346-a7fd-baebdd54f29d.png)
- /USER
+
+# /USER
 ![image](https://user-images.githubusercontent.com/125046205/231169871-8222e587-e442-481e-967e-4a36c0cd9cdf.png)
 
 ![image](https://user-images.githubusercontent.com/125046205/231170134-de5e4434-7663-4992-a755-4991794407f3.png)
