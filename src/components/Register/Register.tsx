@@ -1,14 +1,21 @@
 import { LockClosedIcon } from '@heroicons/react/20/solid';
 import { useState } from 'react';
 import axios from 'axios';
-import BasicAlerts from '../BasicAlerts';
-import ConfirmAlert from '../ConfirmAlert';
-import { Link, Routes,Route } from 'react-router-dom';
-import Login from '../Login';
+//import BasicAlerts from '../BasicAlerts';
+import AlertSucess from '../AlertSucess/index.tsx'
+import BasicAlerts from  '../BasicAlerts/index.tsx'
+import { Link, Routes,Route, Navigate, useNavigate } from 'react-router-dom';
+
+import validator from 'validator'
+import './resgister.css'
+import React from 'react';
 
 export default function Register() {
+    const navigate = useNavigate()
+    const [values,setValues]= useState<object| any>()
 
-    const [values,setValues]= useState()
+    const [emailError, setEmailError] = useState< React.ChangeEvent<HTMLInputElement> | string >()
+
 
     const [showError,setShowError]= useState(false)
     const [errorMessage,setErrorMessage]= useState()
@@ -16,7 +23,17 @@ export default function Register() {
     const [showSucess,setShowSucess]= useState(false)
     const [sucessMessage,setSucessMessage]= useState()
 
-    const handleClickButton = (evento) => {
+    const validateEmail = (e: any) => {
+        var email = e.target.value
+      
+        if (validator.isEmail(email)) {
+          setEmailError('Email Válido :)')
+        } else {
+          setEmailError('Email inválido!')
+        }
+      }
+
+    const handleClickButton = (evento: { preventDefault: () => void; }) => {
         axios.post("http://localhost:3001/auth/register",{
             name: values.name,
             email: values.email,
@@ -26,22 +43,28 @@ export default function Register() {
             setShowSucess(true)
             setSucessMessage(response.data.msg)
             console.log(response.data.msg)
+            navigate('/auth/login')
         }).catch(function (error){
             setShowError(true)
             const  mensagem =  error.response.data
             setErrorMessage(mensagem.msg)
             console.log(mensagem)
         })
-       
+        
         evento.preventDefault()
     }
 
-    const handleChangeValue = value =>{
+    const handleChangeValue = (value: { target: { name: any; value: any; }; }) =>{
         setShowError(false)
-        setValues(prevValue => ({
+        setValues((prevValue: any ) => ({
             ...prevValue,
             [value.target.name]: value.target.value
         }))
+        
+        console.log(values)
+    }
+    const handleEmailError = () =>{
+        setEmailError('')
     }
     return (
         <>
@@ -72,7 +95,6 @@ export default function Register() {
                                     onChange={handleChangeValue}
                                     />
                             </div>
-
                             <div>
                                 <label htmlFor="email-address" className="sr-only">
                                     Email address
@@ -86,8 +108,14 @@ export default function Register() {
                                     className="relative block w-full rounded-t-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     placeholder="Email address" 
                                     onChange={handleChangeValue}
+                                    onChangeCapture={
+                                        (e)=> validateEmail(e)
+                                    }
                                     />
                             </div>
+                            <p className='errorEmail'>
+                                 <> {emailError}</>
+                            </p>
                             <div>
                                 <label htmlFor="password" className="sr-only">
                                     Password
@@ -101,6 +129,7 @@ export default function Register() {
                                     className="relative block w-full rounded-b-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     placeholder="Password" 
                                     onChange={handleChangeValue}
+                                    onChangeCapture={handleEmailError}
                                     />
                             </div>
                             <div>
@@ -154,13 +183,9 @@ export default function Register() {
                                 Sign in
                             </button>
                         </div>
-                        <ConfirmAlert showSucess={showSucess} sucessMessage={sucessMessage}/>
-
-                        <BasicAlerts 
-                        showError={showError}
-                        errorMessage={errorMessage}
-                        ></BasicAlerts>
                     </form>
+                    <BasicAlerts showError={showError} errorMessage={errorMessage} ></BasicAlerts>
+                    <AlertSucess showSucess={showSucess} sucessMessage={sucessMessage} ></AlertSucess>
                 </div>
             </div>
             

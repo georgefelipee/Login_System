@@ -1,0 +1,8 @@
+.errorEmail{
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 15px;
+    display: flex;
+    color: rgba(60, 57, 218, 0.855);
+    justify-content: space-between;
+}
