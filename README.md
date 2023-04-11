@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Login System
+# 📕Descrição
+- Esse Projeto consiste no front end e consumo da API de Login e Registro de usuários  criada por mim.
+- Contém uma rota "publica" /home, e uma rota "privada" /user, que mostra as informações do usuário somente se estiver logado.
+- Conexão com o banco de dados MongoDB, com verificação se o usuário existe, informações corretas etc.
+- Armazenamento de token em localStorage para autenticação e para o usuário ficar logado
+- Uso de Bibliotecas de UI para facilitar a criação da interface principal de registro e login.
+- 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# 🪓Ferramentas Utilizadas
+- Reactjs
+- Typescript
+- Hooks
+- CustomHooks
+- UseContext
+- ContextApi
+- Axios
+- Validator
+- React Router 
+- TailwindCss
+- Material UI
 
-In the project directory, you can run:
+/Register
+![image](https://user-images.githubusercontent.com/125046205/231169610-92d87cac-d28f-4e1a-8ce6-0f4a473a234c.png)
+/Login
+![image](https://user-images.githubusercontent.com/125046205/231169738-e9676c8c-3d08-4346-a7fd-baebdd54f29d.png)
+ /USER
+![image](https://user-images.githubusercontent.com/125046205/231169871-8222e587-e442-481e-967e-4a36c0cd9cdf.png)
 
-### `npm start`
+![image](https://user-images.githubusercontent.com/125046205/231170134-de5e4434-7663-4992-a755-4991794407f3.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![image](https://user-images.githubusercontent.com/125046205/231170469-50c8b941-5339-4787-87fb-93bfbc4fc495.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![image](https://user-images.githubusercontent.com/125046205/231170579-57d7a3fe-7a1d-4595-aeb3-1d8e792c990d.png)
 
-### `npm test`
+![image](https://user-images.githubusercontent.com/125046205/231170715-3e2704b3-efcb-4dd5-9384-9b9537c1e9d1.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
