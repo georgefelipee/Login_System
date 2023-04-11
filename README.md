@@ -7,7 +7,6 @@
 - Uso de Bibliotecas de UI para facilitar a criação da interface principal de registro e login.
 
 
-
 # 🪓Ferramentas Utilizadas
 - Reactjs
 - Typescript
